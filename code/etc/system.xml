@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <ikonoshirt translate="label" module="ikonoshirt_securesession">
+            <label>Ikonoshirt</label>
+            <sort_order>506</sort_order>
+        </ikonoshirt>
+    </tabs>
+    <sections>
+        <ikonoshirt_securesession translate="label" module="ikonoshirt_securesession">
+            <label>Secure Session</label>
+            <tab>ikonoshirt</tab>
+            <sort_order>120</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <securesession translate="label" module="ikonoshirt_securesession">
+                    <label>General</label>
+                    <comment><![CDATA[Be careful with this options, you might get problems with your (varnish) caching]]></comment>
+                    <expanded>1</expanded>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <renew_session_per_request translate="label comment" module="ikonoshirt_securesession">
+                            <label><![CDATA[Renew the session id on every request]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </renew_session_per_request>
+                        <renew_session_id_after_login translate="label comment" module="ikonoshirt_securesession">
+                            <label>Renew session id after login</label>
+                            <comment>Generate a new session id and set a new cookie, after the user logged in</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <renew_session_per_request>0</renew_session_per_request>
+                            </depends>
+                        </renew_session_id_after_login>
+                        <logout_user_if_session_id_in_param translate="label comment" module="ikonoshirt_securesession">
+                            <label>Logout the user, when the session id is in the param</label>
+                            <comment>Logout the user if the session id is send via POST/GET parameter</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </logout_user_if_session_id_in_param>
+                    </fields>
+                </securesession>
+            </groups>
+        </ikonoshirt_securesession>
+    </sections>
+</config>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <ikonoshirt_securesession translate="title" module="ikonoshirt_securesession">
+                                        <title>Secure Session Settings</title>
+                                        <sort_order>130</sort_order>
+                                    </ikonoshirt_securesession>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
